@@ -1,6 +1,9 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Quiz Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -8,15 +11,19 @@
   <h1>Available Quizzes</h1>
   <div id="quiz-links"></div>
   <script>
+    const quizzes = [
+      { id: "quiz-0001", title: "General Knowledge" },
+      { id: "quiz-0002", title: "Math Basics" },
+      { id: "quiz-0003", title: "Science" }
+    ];
     const container = document.getElementById("quiz-links");
-    for (let i = 1; i <= 50; i++) {
-      const id = `quiz-${String(i).padStart(4, '0')}`;
+    quizzes.forEach(q => {
       const a = document.createElement("a");
-      a.href = `quiz.html?id=${id}`;
-      a.textContent = `Take ${id}`;
+      a.href = `quiz.html?id=${q.id}`;
+      a.textContent = q.title;
       a.style.display = "block";
       container.appendChild(a);
-    }
+    });
   </script>
 </body>
 </html>

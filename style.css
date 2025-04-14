@@ -1,2 +1,4 @@
-body { font-family: Arial; padding: 20px; }
-a { margin: 5px 0; display: block; }
+
+body { font-family: Arial, sans-serif; padding: 20px; }
+h1 { text-align: center; }
+#quiz-links a { display: block; margin: 10px 0; color: blue; }
