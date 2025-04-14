@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment Page</title>
+</head>
+<body>
+  <h2>Pay to Access Quiz</h2>
+  <button onclick="makePayment()">Pay GHS 10</button>
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+  <script>
+    function makePayment() {
+      FlutterwaveCheckout({
+        public_key: "YOUR_PUBLIC_KEY_HERE",
+        tx_ref: Date.now(),
+        amount: 10,
+        currency: "GHS",
+        redirect_url: "https://your-site.netlify.app/quiz.html?id=quiz-0001",
+        customer: {
+          email: "test@example.com",
+          phonenumber: "0500000000",
+          name: "User"
+        }
+      });
+    }
+  </script>
+</body>
+</html>

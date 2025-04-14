@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Available Quizzes</h1>
+  <div id="quiz-links"></div>
+  <script>
+    const container = document.getElementById("quiz-links");
+    for (let i = 1; i <= 50; i++) {
+      const id = `quiz-${String(i).padStart(4, '0')}`;
+      const a = document.createElement("a");
+      a.href = `quiz.html?id=${id}`;
+      a.textContent = `Take ${id}`;
+      a.style.display = "block";
+      container.appendChild(a);
+    }
+  </script>
+</body>
+</html>
